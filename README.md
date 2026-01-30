@@ -4,9 +4,7 @@
 ![Task](https://img.shields.io/badge/Task-Medical_Image_Classification-blue)
 ![GenAI](https://img.shields.io/badge/GenAI-Reflective_Partner-purple)
 
-> **Huawei ICT Teaching Competition 2025-26 Entry**
->
-> An industry-aligned laboratory curriculum designed to transition students from "toy" datasets to real-world cloud engineering.
+
 
 ## 📺 Project Demo
 
