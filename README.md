@@ -1,67 +1,145 @@
-# Cloud-Native Deep Learning with Authentic Medical Data ☁️🩺
+# Medical Image Classification with ResNet-50 on Huawei Cloud ModelArts ☁️🩺
 
 ![Platform](https://img.shields.io/badge/Platform-Huawei_Cloud_ModelArts-red)
-![Task](https://img.shields.io/badge/Task-Medical_Image_Classification-blue)
-![GenAI](https://img.shields.io/badge/GenAI-Reflective_Partner-purple)
+![Model](https://img.shields.io/badge/Model-ResNet--50-blue)
+![Task](https://img.shields.io/badge/Task-Medical_Image_Classification-green)
+![Explainability](https://img.shields.io/badge/XAI-Grad--CAM-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
+A cloud-native, hands-on teaching laboratory for introducing undergraduate students to practical deep learning using authentic cervical spine X-ray data.
 
+This repository was developed for the **Huawei ICT Teaching Competition 2025–26** as a reusable instructional case on medical image classification, transfer learning, holistic model evaluation, and responsible GenAI-supported reflection.
+
+---
+
+## 📌 Project Overview
+
+Most beginner deep learning tutorials use clean toy datasets such as MNIST or CIFAR-10. This project deliberately moves students into a more realistic setting:
+The lab task is to fine-tune a pretrained **ResNet-50** model to classify cervical spine curvature types from X-ray images.
+
+> **Educational scope:** This project is designed for teaching and research training only. It is not a clinical diagnostic system and must not be used for patient care.
+
+---
+
+## 🎯 Learning Objectives
+
+By completing this lab, students will learn to:
+
+1. Operate a GPU-powered notebook environment on Huawei Cloud ModelArts.
+2. Build a PyTorch data pipeline using clinical images and Excel-based labels.
+3. Apply transfer learning with a pretrained ResNet-50 model.
+4. Use early stopping and learning rate scheduling to reduce overfitting on small medical datasets.
+5. Evaluate performance using accuracy, precision, recall, F1-score, and confusion matrices.
+6. Interpret model predictions using Grad-CAM heatmaps.
+7. Reflect on model limitations and propose one evidence-based improvement after the lab.
+
+---
 
 ## 📺 Project Demo
 
-Click the link below to watch the full instructional demonstration and pedagogical breakdown:
+Watch the instructional demonstration and pedagogical explanation:
 
-**[▶️ Watch: ResNet-50 Cervical Spine Classification Lab](https://www.bilibili.com/video/BV1ZP6BBvEgU/?share_source=copy_web&vd_source=f23fdab1cf57871b257305ebe143b9c2)**
-
----
-
-## 📖 About This Project
-
-This repository bridges the gap between academic theory and industrial reality. Instead of relying on simplified "toy" datasets, this laboratory challenges learners to engineer a complete Deep Learning pipeline on **Huawei Cloud ModelArts** using raw, imbalanced medical data.
-
-**Core Objectives:**
-* **Authenticity:** Shifting from clean academic data to noisy clinical X-rays.
-* **Cloud Proficiency:** Migrating execution from local CPUs to distributed cloud GPUs.
-* **AI Literacy:** Utilizing Generative AI strictly as a Socratic reflective partner, not a code generator.
+[▶️ Watch: ResNet-50 Cervical Spine Classification Lab](https://www.bilibili.com/video/BV1ZP6BBvEgU/?share_source=copy_web&vd_source=f23fdab1cf57871b257305ebe143b9c2)
 
 ---
 
-## 🧠 Curriculum Architecture
+## 📄 Main Teaching Materials
 
-The laboratory follows a two-phase scaffolded design:
-
-### Phase 1: Guided Implementation (In-Class)
-Learners establish a baseline model using a standard industrial workflow.
-* **Infrastructure:** PyTorch pipeline setup on Tesla V100 GPUs.
-* **Training:** Fine-tuning **ResNet-50** on the target dataset.
-* **Validation:** Error analysis using Confusion Matrices and Grad-CAM heatmaps.
-
-### Phase 2: The Inquiry Loop (Post-Class)
-An independent optimization task to foster critical thinking.
-* **The Constraint:** Learners modify exactly **one** variable (e.g., learning rate, augmentation).
-* **The Loop:** Hypothesis → GenAI Consultation → Cloud Execution → Evidence-Based Reflection.
+| Resource | Description |
+|---|---|
+| [Lab Note.pdf](./Lab%20Note.pdf) | Polished two-hour student-facing lab note |
+| [HuaweiICT_ResNet50.ipynb](./HuaweiICT_ResNet50.ipynb) | Complete Jupyter notebook for training, evaluation, and Grad-CAM |
+| [After-Class Inquiry Report](./anonymous_student_after_class_inquiry_task_report.pdf) | Example of GenAI-supported student reflection |
+| [Kaggle Notebook](https://www.kaggle.com/code/ddatad/spine-xray-curvature-classification-resnet50) | Online notebook reference |
+| [CSXA Dataset on Kaggle](https://www.kaggle.com/datasets/ddatad/cervical-x-ray/data) | Cervical spine X-ray dataset used in this lab |
 
 ---
 
-## 📂 Technical Details
+## 🧠 Pedagogical Design
 
-### The Dataset: Cervical Spine X-ray Atlas (CSXA)
-This project utilizes the **CSXA Dataset** to present real-world engineering hurdles. Unlike balanced academic sets, this data contains severe class imbalance.
+The lab follows a two-phase scaffolded learning design.
 
-**[🔗 Access the Dataset on Kaggle](https://www.kaggle.com/datasets/ddatad/cervical-x-ray/data)**
+### Phase 1: In-Class Guided Implementation
 
-**Classes:**
-1.  **Lordotic** (Normal)
-2.  **Straight** (Loss of curvature/"Tech Neck")
-3.  **Sigmoid**
-4.  **Kyphotic** (Pathological/Rare)
+Students first reproduce a complete baseline pipeline under instructor guidance.
 
-### The Model
-* **Backbone:** ResNet-50 (Pretrained on ImageNet)
-* **Optimization:** SGD with step-based decay.
-* **Explainability:** Gradient-weighted Class Activation Mapping (Grad-CAM).
+### Phase 2: After-Class Inquiry Task
+
+Students then act as lead engineers and improve the baseline model through a controlled experiment.
+
+The required inquiry loop is:
+
+```text
+Observe problem
+→ Ask GenAI for possible strategies
+→ Critique the suggestions
+→ Select one strategy
+→ Implement on ModelArts
+→ Compare against baseline
+→ Write evidence-based reflection
+```
+
+The design intentionally avoids both extremes:
+
+| Approach | Problem |
+|---|---|
+| Banning GenAI | Ignores students' real learning environment |
+| Unrestricted GenAI use | Encourages copy-paste without understanding |
+| Reflective GenAI use | Encourages brainstorming, critique, and responsibility |
 
 ---
 
-## 📄 Repository Content
+## 🩻 Dataset and Classification Task
 
-* **`HuaweiICT_ResNet50.ipynb`**: The complete Jupyter Notebook containing the end-to-end pipeline, from data ingestion to explainability visualization.
+This lab uses the **Cervical Spine X-ray Atlas (CSXA)** dataset introduced by Ran et al. (2024).
+
+For teaching purposes, we use 999 cervical spine X-ray images and formulate the task as a four-class classification problem:
+
+| Class | Clinical label |
+|---|---|
+| 1 | Lordotic |
+| 2 | Straight |
+| 3 | Sigmoid |
+| 4 | Kyphotic |
+
+---
+
+
+## 📊 Evaluation Philosophy
+
+The lab emphasizes that **global accuracy is not enough for medical AI**.
+
+In the baseline run, the model reaches approximately **75.5% validation accuracy**, but class-level analysis reveals a critical weakness: the Sigmoid class has much lower recall than the other classes.
+
+This is the central teaching point:
+
+> A model can look acceptable from one headline metric while still failing on a clinically meaningful minority class.
+
+
+---
+
+## 📚 References and Further Reading
+
+### Core Dataset
+
+- Ran, Y., Qin, W., Qin, C., et al. (2024). *A high-quality dataset featuring classified and annotated cervical spine X-ray atlas*. Scientific Data, 11, 625.  
+  https://www.nature.com/articles/s41597-024-03383-0
+
+### Deep Learning Concepts
+
+- He, K., Zhang, X., Ren, S., & Sun, J. (2015). *Deep Residual Learning for Image Recognition*.  
+  https://arxiv.org/abs/1512.03385
+
+- PyTorch Official Tutorial: *Transfer Learning for Computer Vision*.  
+  https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+
+- TorchVision ResNet-50 Documentation.  
+  https://docs.pytorch.org/vision/main/models/generated/torchvision.models.resnet50.html
+
+### Explainable AI
+
+- Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2017). *Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization*.  
+  https://arxiv.org/abs/1610.02391
+
+---
+
